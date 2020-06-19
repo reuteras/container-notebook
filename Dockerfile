@@ -23,7 +23,7 @@ RUN apt-get update && apt-get install -yq --no-install-recommends \
     # ---- nbconvert dependencies ----
     texlive-xetex \
     texlive-fonts-recommended \
-    texlive-generic-recommended \
+    texlive-plain-generic \
     # ----
     tzdata \
     unzip \
