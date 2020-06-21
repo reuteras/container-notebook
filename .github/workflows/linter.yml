@@ -25,3 +25,5 @@ jobs:
     # Runs a single command using the runners shell
     - name: Lint Code Base
       uses: docker://github/super-linter:v2.1.0
+      env:
+        ACTIONS_RUNNER_DEBUG: true
