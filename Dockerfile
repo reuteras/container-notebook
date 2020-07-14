@@ -10,7 +10,6 @@ USER root
 # Install all OS dependencies for fully functional notebook server
 RUN apt-get update && apt-get install -yq --no-install-recommends \
     build-essential \
-    vim-tiny \
     git \
     inkscape \
     libsm6 \
@@ -19,14 +18,23 @@ RUN apt-get update && apt-get install -yq --no-install-recommends \
     lmodern \
     netcat \
     python-dev \
+    tzdata \
+    unzip \
+    vim-tiny \
     # ---- nbconvert dependencies ----
     texlive-xetex \
     texlive-fonts-recommended \
     texlive-plain-generic \
     # ----
-    tzdata \
-    unzip \
-    && apt-get clean && rm -rf /var/lib/apt/lists/* && \
+    # ---- extra tools ----
+    bzip2 \
+    datamash \
+    jq \
+    p7zip-full \
+    p7zip-rar \
+    pigz && \
+    # ----
+    apt-get clean && rm -rf /var/lib/apt/lists/* && \
     rm -rf /var/lib/apt/lists/* /usr/share/doc && \
     rm -rf /usr/local/share/man /var/cache/debconf/*-old
 
