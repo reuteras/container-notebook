@@ -28,6 +28,7 @@ RUN apt-get update && apt-get install -yq --no-install-recommends \
     # ----
     # ---- extra tools ----
     bzip2 \
+    curl \
     datamash \
     file \
     jq \
