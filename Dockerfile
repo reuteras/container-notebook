@@ -34,7 +34,8 @@ RUN apt-get update && apt-get install -yq --no-install-recommends \
     jq \
     p7zip-full \
     p7zip-rar \
-    pigz && \
+    pigz \
+    tshark && \
     # ----
     apt-get clean && rm -rf /var/lib/apt/lists/* && \
     rm -rf /var/lib/apt/lists/* /usr/share/doc && \
