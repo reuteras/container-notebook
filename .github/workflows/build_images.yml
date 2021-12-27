@@ -5,6 +5,7 @@ on:
   push:
     branches:
       - master
+  cron:  "42 5 2,10,18,26 * *"
 
 jobs:
   docker:
