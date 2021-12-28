@@ -6,7 +6,7 @@ on:
     branches:
       - master
   schedule:
-    - cron:  "42 5 2,10,18,26 * *"
+    - cron:  "45 6 * * *"
 
 jobs:
   docker:
