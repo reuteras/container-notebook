@@ -17,7 +17,7 @@ RUN apt-get update && apt-get install -yq --no-install-recommends \
     libxrender1 \
     lmodern \
     netcat \
-    python-dev \
+    python3-dev \
     tzdata \
     unzip \
     vim-tiny \
