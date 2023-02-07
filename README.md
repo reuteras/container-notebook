@@ -8,4 +8,15 @@ Built from the [minimal-notebook](https://github.com/jupyter/docker-stacks/tree/
 
 Since then I've started to add tools that I find useful to the container.
 
-At the moment I've switched to build the container on GitHub and at the moment I build for amd64 and arm64.
+At the moment I've switched to build the container on GitHub and build it for amd64 and arm64.
+
+## Usage
+
+To run it on Windows I use the following function in my PowerShell profile:
+
+```
+# Function to start a Jupyter notebook
+function notebook () {
+    docker run --name notebook --rm -p 8888:8888 -v C:\Users\reuteras\Documents\Jupyter\work\:/home/jovyan/work -v C:\Users\reuteras\Documents\Jupyter\.jupyter:/home/jovyan/.jupyter reuteras/container-notebook
+}
+```
