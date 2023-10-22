@@ -13,6 +13,7 @@ RUN apt-get update && apt-get install -yq --no-install-recommends \
     git \
     inkscape \
     libsm6 \
+    libsndfile1 \
     libxext-dev \
     libxrender1 \
     lmodern \
