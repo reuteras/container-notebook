@@ -37,7 +37,7 @@ RUN apt-get update && \
         tshark \
         yara && \
         python -m pip --no-cache-dir install -U pip && \
-        python -m pip --no-cache-dir install -U jupyterlab jupyter_ai && \
+        python -m pip --no-cache-dir install -U jupyterlab jupyter_ai langchain-ollama && \
     apt-get clean && rm -rf /var/lib/apt/lists/* && \
     rm -rf /var/lib/apt/lists/* /usr/share/doc && \
     rm -rf /usr/local/share/man /var/cache/debconf/*-old
