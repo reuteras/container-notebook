@@ -19,7 +19,7 @@ RUN apt-get update && \
         libxext-dev \
         libxrender1 \
         lmodern \
-        netcat \
+        netcat-openbsd \
         python3-dev \
         tzdata \
         unzip \
