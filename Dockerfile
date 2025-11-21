@@ -1,7 +1,7 @@
 # Copyright (c) Jupyter Development Team.
 # Distributed under the terms of the Modified BSD License.
 # Modified by code@ongoing.today to be smaller.
-FROM quay.io/jupyter/base-notebook:latest
+FROM quay.io/jupyter/base-notebook:2025-11-18
 
 LABEL maintainer="Coding <code@ongoing.today>"
 
@@ -45,3 +45,6 @@ RUN apt-get update && \
 
 # Switch back to jovyan to avoid accidental container runs as root
 USER $NB_UID
+
+HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
+    CMD curl -f http://localhost:8888/api || exit 1
