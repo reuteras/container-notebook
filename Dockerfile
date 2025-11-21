@@ -8,6 +8,7 @@ LABEL maintainer="Coding <code@ongoing.today>"
 USER root
 
 # Install all OS dependencies for fully functional notebook server
+# hadolint ignore=DL3008
 RUN apt-get update && \
     dpkg --configure -a && \
     apt-get install -yq --no-install-recommends --fix-broken \
