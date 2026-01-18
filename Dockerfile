@@ -1,7 +1,7 @@
 # Copyright (c) Jupyter Development Team.
 # Distributed under the terms of the Modified BSD License.
 # Modified by code@ongoing.today to be smaller.
-FROM quay.io/jupyter/base-notebook:latest@sha256:e4d63436c5dfc445dd2b6833fb23931267017e2312b7f3695583e87c47d7c8e0
+FROM quay.io/jupyter/base-notebook:latest@sha256:fb3fd25589f8e25e048e9c0dcca3fec74a9ef612d4730f7d29a00ba984139e7b
 
 LABEL maintainer="Coding <code@ongoing.today>"
 
