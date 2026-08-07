@@ -20,4 +20,3 @@ function notebook () {
     docker run --name notebook --rm -p 8888:8888 -v C:\Users\reuteras\Documents\Jupyter\work\:/home/jovyan/work -v C:\Users\reuteras\Documents\Jupyter\.jupyter:/home/jovyan/.jupyter reuteras/container-notebook
 }
 ```
-
