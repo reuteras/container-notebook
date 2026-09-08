@@ -1,0 +1,12 @@
+[project]
+name = "container-notebook"
+version = "0.1.0"
+description = "Dependency set for the reuteras/container-notebook Jupyter image"
+requires-python = ">=3.13,<3.14"
+dependencies = [
+    "jupyterlab",
+    "jupyter_ai",
+    "langchain-ollama",
+    "ipywidgets",
+    "jupyterlab_widgets",
+]

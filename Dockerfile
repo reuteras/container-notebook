@@ -1,11 +1,15 @@
 # Copyright (c) Jupyter Development Team.
 # Distributed under the terms of the Modified BSD License.
 # Modified by code@ongoing.today to be smaller.
+FROM ghcr.io/astral-sh/uv:0.12.10@sha256:2bb3ebca0a796a155094a27773d290c4b074572e6107f171d88d086682fd2500 AS uv
 FROM quay.io/jupyter/base-notebook:latest@sha256:292da16615e356b8b1258dab58f86386d9624e2a9532fc1d7ab1d6585dc7773a
 
 LABEL maintainer="Coding <code@ongoing.today>"
 
 USER root
+
+COPY --from=uv /uv /usr/local/bin/uv
+COPY pyproject.toml uv.lock /tmp/build/
 
 # Install all OS dependencies for fully functional notebook server
 # hadolint ignore=DL3008
@@ -39,7 +43,11 @@ RUN apt-get update && \
         tshark \
         yara && \
         python -m pip --no-cache-dir install -U pip && \
-        python -m pip --no-cache-dir install -U jupyterlab jupyter_ai langchain-ollama && \
+        # Versions are pinned in uv.lock (source of truth); unpinned installs let jupyter_ai's federated JS drift out of sync with jupyterlab core's shared singletons.
+        uv --project /tmp/build export --frozen --no-hashes --no-emit-project -o /tmp/build/requirements.txt && \
+        uv pip install --python /opt/conda/bin/python --no-deps -r /tmp/build/requirements.txt && \
+        jupyter labextension disable "@jupyter-ai/chat-commands" && \
+        rm -rf /tmp/build && \
     apt-get clean && rm -rf /var/lib/apt/lists/* && \
     rm -rf /var/lib/apt/lists/* /usr/share/doc && \
     rm -rf /usr/local/share/man /var/cache/debconf/*-old

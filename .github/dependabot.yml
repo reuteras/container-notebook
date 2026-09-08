@@ -33,3 +33,14 @@ updates:
       pre-commit-deps:
         patterns:
           - "*"
+
+  - package-ecosystem: "uv"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    cooldown:
+      default-days: 7
+    groups:
+      uv-deps:
+        patterns:
+          - "*"
