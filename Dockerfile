@@ -37,8 +37,8 @@ RUN apt-get update && \
         datamash \
         file \
         jq \
-        p7zip-full \
-        p7zip-rar \
+        7zip \
+        7zip-rar \
         pigz \
         tshark \
         yara && \
