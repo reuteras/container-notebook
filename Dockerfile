@@ -6,7 +6,7 @@ FROM quay.io/jupyter/base-notebook:latest@sha256:cde41a345c3758f660527c856a47ff8
 
 LABEL maintainer="Coding <code@ongoing.today>"
 
-USER root
+USER 0
 
 COPY --from=uv /uv /usr/local/bin/uv
 COPY pyproject.toml uv.lock /tmp/build/
@@ -53,7 +53,9 @@ RUN apt-get update && \
     rm -rf /usr/local/share/man /var/cache/debconf/*-old
 
 # Switch back to jovyan to avoid accidental container runs as root
-USER $NB_UID
+# NB_UID is numeric (set by the base image); hadolint cannot resolve it.
+# hadolint ignore=DL3066
+USER ${NB_UID}
 
 HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
-    CMD curl -f http://localhost:8888/api || exit 1
+    CMD ["sh", "-c", "curl -f http://localhost:8888/api || exit 1"]
