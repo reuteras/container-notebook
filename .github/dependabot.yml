@@ -44,3 +44,10 @@ updates:
       uv-deps:
         patterns:
           - "*"
+
+  - package-ecosystem: "docker"
+    directory: "/.github/osv-scanner"
+    schedule:
+      interval: "weekly"
+    cooldown:
+      default-days: 7
