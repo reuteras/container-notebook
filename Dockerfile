@@ -15,6 +15,7 @@ COPY pyproject.toml uv.lock /tmp/build/
 # hadolint ignore=DL3008
 RUN apt-get update && \
     dpkg --configure -a && \
+    apt-get upgrade -yq && \
     apt-get install -yq --no-install-recommends --fix-broken \
         build-essential \
         git \
