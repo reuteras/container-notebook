@@ -1,8 +1,8 @@
 # Copyright (c) Jupyter Development Team.
 # Distributed under the terms of the Modified BSD License.
 # Modified by code@ongoing.today to be smaller.
-FROM ghcr.io/astral-sh/uv:0.13.8@sha256:5cc1805e2426484abca4ad46ea783bab281fdb225fd82d8ce6d66a81254bac85 AS uv
-FROM quay.io/jupyter/base-notebook:latest@sha256:5994f10134bdaf67533591d092307285219a7e687b99e790a4ca25398fedf433
+FROM ghcr.io/astral-sh/uv:0.13.9@sha256:d3b601f0c7b118bc1753febf7c41cc80981df678445e0254284eecf84db79a7d AS uv
+FROM quay.io/jupyter/base-notebook:latest@sha256:21eeabb12e91285915285c112ba8084dca64a363b8464cb910808448b7d20cd5
 
 LABEL maintainer="Coding <code@ongoing.today>"
 
