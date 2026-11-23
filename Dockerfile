@@ -2,7 +2,7 @@
 # Distributed under the terms of the Modified BSD License.
 # Modified by code@ongoing.today to be smaller.
 FROM ghcr.io/astral-sh/uv:0.13.9@sha256:d3b601f0c7b118bc1753febf7c41cc80981df678445e0254284eecf84db79a7d AS uv
-FROM quay.io/jupyter/base-notebook:latest@sha256:21eeabb12e91285915285c112ba8084dca64a363b8464cb910808448b7d20cd5
+FROM quay.io/jupyter/base-notebook:latest@sha256:c69a400501596f10e77e07191616e4fd7659e560fffc64c1be676ed28e24ddf8
 
 LABEL maintainer="Coding <code@ongoing.today>"
 
